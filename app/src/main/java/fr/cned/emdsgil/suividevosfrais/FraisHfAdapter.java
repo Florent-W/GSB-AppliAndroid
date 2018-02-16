@@ -79,5 +79,5 @@ class FraisHfAdapter extends BaseAdapter {
 		holder.txtListMotif.setText(lesFrais.get(index).getMotif()) ;
 		return convertView ;
 	}
-	
+
 }

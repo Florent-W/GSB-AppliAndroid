@@ -92,13 +92,19 @@
 
             <EditText
                 android:id="@+id/txtKm"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:width="100dp"
                 android:gravity="end|center_vertical"
                 android:inputType="number">
-
+            <!--  La deuxième ligne jusqu'à la cinquième permettent de ne pas pouvoir saisir
+            de texte ni de nombre
+       dans la zone de saisie-->
                 <requestFocus />
             </EditText>
 

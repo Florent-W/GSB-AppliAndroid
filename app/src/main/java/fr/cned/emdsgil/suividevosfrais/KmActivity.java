@@ -70,14 +70,14 @@ public class KmActivity extends AppCompatActivity {
 		}
 		((EditText)findViewById(R.id.txtKm)).setText(String.format(Locale.FRANCE, "%d", qte)) ;
 	}
-	
+
 	/**
 	 * Sur la selection de l'image : retour au menu principal
 	 */
     private void imgReturn_clic() {
     	findViewById(R.id.imgKmReturn).setOnClickListener(new ImageView.OnClickListener() {
     		public void onClick(View v) {
-    			retourActivityPrincipale() ;    		
+    			retourActivityPrincipale() ;
     		}
     	}) ;
     }
@@ -89,11 +89,11 @@ public class KmActivity extends AppCompatActivity {
     	findViewById(R.id.cmdKmValider).setOnClickListener(new Button.OnClickListener() {
     		public void onClick(View v) {
     			Serializer.serialize(Global.listFraisMois, KmActivity.this) ;
-    			retourActivityPrincipale() ;    		
+    			retourActivityPrincipale() ;
     		}
-    	}) ;    	
+    	}) ;
     }
-    
+
     /**
      * Sur le clic du bouton plus : ajout de 10 dans la quantité
      */
@@ -103,9 +103,9 @@ public class KmActivity extends AppCompatActivity {
     			qte+=10 ;
     			enregNewQte() ;
     		}
-    	}) ;    	
+    	}) ;
     }
-    
+
     /**
      * Sur le clic du bouton moins : enlève 10 dans la quantité si c'est possible
      */
@@ -115,20 +115,20 @@ public class KmActivity extends AppCompatActivity {
    				qte = Math.max(0, qte-10) ; // suppression de 10 si possible
     			enregNewQte() ;
      		}
-    	}) ;    	
+    	}) ;
     }
-    
+
     /**
      * Sur le changement de date : mise à jour de l'affichage de la qte
      */
-    private void dat_clic() {   	
+    private void dat_clic() {
     	final DatePicker uneDate = (DatePicker) findViewById(R.id.datKm);
     	uneDate.init(uneDate.getYear(), uneDate.getMonth(), uneDate.getDayOfMonth(), new OnDateChangedListener(){
 			@Override
 			public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-				valoriseProprietes() ;				
+				valoriseProprietes() ;
 			}
-    	});       	
+    	});
     }
 
 	/**
@@ -143,7 +143,7 @@ public class KmActivity extends AppCompatActivity {
 			// creation du mois et de l'annee s'ils n'existent pas déjà
 			Global.listFraisMois.put(key, new FraisMois(annee, mois)) ;
 		}
-		Global.listFraisMois.get(key).setKm(qte) ;		
+		Global.listFraisMois.get(key).setKm(qte) ;
 	}
 
 	/**
@@ -151,6 +151,6 @@ public class KmActivity extends AppCompatActivity {
 	 */
 	private void retourActivityPrincipale() {
 		Intent intent = new Intent(KmActivity.this, MainActivity.class) ;
-		startActivity(intent) ;   					
+		startActivity(intent) ;
 	}
 }
