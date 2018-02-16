@@ -24,6 +24,10 @@
         <activity android:name=".HfActivity" />
         <activity android:name=".HfRecapActivity" />
         <activity android:name=".KmActivity" />
+        <activity android:name=".FraisNuiteeActivity" />
+        <activity android:name=".FraisEtapeActivity" />
+        <activity android:name=".FraisRepasActivity" />
+
     </application>
 
 </manifest>
